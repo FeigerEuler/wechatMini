@@ -1,0 +1,22 @@
+.m-pay-detail-table{
+    font-size: 12px;
+    background: #f8f8f8;    
+}
+
+.throw, .tdrow{
+    display: flex;
+    justify-content: space-between;
+}
+
+.throw{
+    color: #5cadff;
+}
+
+.tdrow{
+    color: rgba(0,0,0,0.85)
+}
+
+
+.m-pay-detail-table .col{
+    padding: 8rpx;
+}

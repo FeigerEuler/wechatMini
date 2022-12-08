@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "eco-bill-cashier": "../../components/ecobillcashier/index/ecobillcashier"
+  }
+}

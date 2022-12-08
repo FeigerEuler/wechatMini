@@ -1,0 +1,39 @@
+<!--pages/huibo/huibo.wxml-->
+
+<text class = 'title'>12{{posts.subAppId}}</text>
+
+<view>
+     <view class="posts" wx:for="{{posts.postsDetail}}" wx:key="index" wx:for-item = 'i'>
+       <view class="header">
+       <image class ="avatar" src="/static/imags/1.jpg"/>
+         
+          <view>
+            <view class="userName">
+               {{i.userName}}
+           </view>
+         <text class='createTime'>{{i.createTime}}</text>
+          </view>
+         
+         
+       </view>
+    
+        <span class="content">{{i.text}}</span>
+     
+  
+        <view class = 'marg'/>
+
+        <view class='footer'>
+        
+        <button class="likebtn1" plain="true" >
+            <image class="tapimg1" src='/static/imags/like.png'></image>
+        </button> 
+        <button class="comment" plain="true" >
+            <image class="tapimg1" src='/static/imags/comment.png'></image>
+        </button> 
+        </view>
+        
+        <view class = 'br'>
+          
+        </view>
+    </view>     
+</view>

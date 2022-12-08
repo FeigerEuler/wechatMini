@@ -1,0 +1,12 @@
+/* pages/test/test.wxss */
+
+page{
+    padding-top: 16vh;
+    box-sizing: border-box;
+}
+
+
+.btn-info{
+    color: #fff;
+    background-color: #1989fa;
+}

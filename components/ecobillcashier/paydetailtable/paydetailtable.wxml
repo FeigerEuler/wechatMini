@@ -1,0 +1,12 @@
+<view class="m-pay-detail-table">
+    <view class="throw">
+        <span class="col">序号</span>
+        <span class="col">费用类型</span>
+        <span class="col">金额(元)</span>
+    </view> 
+    <view class="tdrow" wx:for="{{paymentDetail}}" wx:key="index">
+        <span class="col">{{index+1}}</span>
+        <span class="col">{{item.typeCn}}</span>
+        <span class="col">{{item.amount}}</span>
+    </view>    
+</view>

@@ -1,0 +1,7 @@
+<view style="margin: 40rpx">
+    <button block class="btn-info" bindtap="goCashierFew" loading="{{loading}}">mhh</button>
+</view>    
+<view style="margin: 40rpx">
+    <button block type="default" bindtap="goCashierMany" loading="{{loading}}">mhh</button>
+</view>    
+

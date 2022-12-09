@@ -10,8 +10,10 @@ Page({
     posts: {
       "subAppId": 123, 
       "postsDetail":[
-        {"id":"1","userName":"mhh","text":"天气不错","createTime":"2022-12-08 15:00","updateTime":"2022-12-08 15:00"},
-        {"id":"2","userName":"Musk","text":"今天下雨","createTime":"2022-12-08 15:00","updateTime":"2022-12-08 15:00"}
+        {"id":"1","userName":"丁蜂","text":"天气不错","createTime":"2022-12-08 15:00","updateTime":"2022-12-08 15:00"},
+        {"id":"2","userName":"Musk","text":"今天下雨","createTime":"2022-12-08 15:00","updateTime":"2022-12-08 15:00"},
+        {"id":"3","userName":"罗安庚","text":"今天和好兄弟约游戏, 美滋滋","createTime":"2022-12-08 15:00","updateTime":"2022-12-08 15:00"}
+  
       ],
     }
   },

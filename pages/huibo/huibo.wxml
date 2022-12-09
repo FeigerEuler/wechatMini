@@ -5,7 +5,7 @@
 <view>
      <view class="posts" wx:for="{{posts.postsDetail}}" wx:key="index" wx:for-item = 'i'>
        <view class="header">
-       <image class ="avatar" src="/static/imags/1.jpg"/>
+       <image class ="avatar" src="/static/imags/{{i.id}}.jpg"/>
          
           <view>
             <view class="userName">

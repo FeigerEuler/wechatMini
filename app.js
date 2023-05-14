@@ -10,6 +10,23 @@ App({
     // 登录
     wx.login({
       success: res => {
+        console.log("111",res)
+        var jsCode=res.code;
+        wx.request({
+          url: `http://localhost:8088/api/login`,
+          method: 'POST',
+          data:{'code':jsCode},
+          success (res1) {console.log(`ok:`,res1)},
+          fail(res1){
+                console.log(`error:`,res1)
+                const msg = `系统异常`;
+                wx.showToast({
+                  title: msg,
+                  icon: 'none',
+                  duration: 2000
+                })
+              },   
+           } ) 
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
@@ -36,5 +53,8 @@ App({
   },
   globalData: {
     userInfo: null,
+      hasLogin: false,
+      openid: null
+
   }
 })

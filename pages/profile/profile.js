@@ -12,9 +12,53 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    var app = getApp()
+    console.log(app.globalData)
   },
+ chargeMB(){
+   
+ },
+ allPosts(){
 
+ },
+  getInfos(e){
+    wx.login({
+
+      success:function(e){
+        console.log("111",e)
+        wx.getUserInfo({
+          success:function(res){
+            wx.request({
+           url: `http://localhost:8088/api/login`,
+           method: 'POST',
+        //   header: {token}, // test token
+           data:{e},
+             success (res1) {
+            console.log('createMobileOrder res:',res1.data);
+            
+              console.log(`not 200...`)
+              const msg = `${res.data.msg || '系统错误'}`;
+              wx.showToast({
+                title: msg,
+                icon: 'none',
+                duration: 2000
+              })
+           
+            },
+          fail(e){
+            console.log(`error:`,e)
+            const msg = `系统异常`;
+            wx.showToast({
+              title: msg,
+              icon: 'none',
+              duration: 2000
+            })
+          },
+            })
+          }
+       } )
+      }});
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

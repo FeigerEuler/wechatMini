@@ -1,0 +1,26 @@
+<!--pages/postDetails/postDetails.wxml-->
+<view class = 'marg'/>
+<view class="header">
+       <image class ="avatar" src="/static/imags/{{detail.id}}.jpg"/>
+          <view>
+            <view class="userName">
+               {{detail.userName}}
+            </view>
+            <text class='createTime'>{{detail.createTime}}</text>
+          </view>
+     
+       </view>
+        <span class="content">{{detail.text}}</span>
+        <view class = 'marg'/>
+        <view class='footer'>     
+        <button class="likebtn1" plain="true" bindtap="clickLikeBt" id="{{index}}">    
+            <image class="tapimg1" src='/static/imags/like.png'></image><text>  {{detail.likes}} </text>        
+        </button> 
+        <button class="comment" plain="true" bindtap="clickCommentBt" id="{{index}}">      
+            <image class="tapimg1" src='/static/imags/comment.png'></image><text> {{detail.comments}} </text>
+        </button> 
+        </view>
+        
+        <view class = 'br'> 
+
+</view>

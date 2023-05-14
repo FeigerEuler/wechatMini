@@ -1,6 +1,8 @@
 {
-  "pages": [ 
+  "pages": [
+    
     "pages/huibo/huibo",
+     "pages/postDetails/postDetails",
     "pages/cashiermock/cashiermock",
     "pages/profile/profile",
     "pages/cashierdemo/cashierdemo"

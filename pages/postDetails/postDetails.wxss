@@ -1,3 +1,4 @@
+/* pages/postDetails/postDetails.wxss */
 /* pages/huibo/huibo.wxss */
 .posts{
   padding-bottom: 10px;

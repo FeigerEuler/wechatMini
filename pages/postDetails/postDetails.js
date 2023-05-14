@@ -1,17 +1,23 @@
-// pages/huibo.js
+// pages/postDetails/postDetails.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+   // detail:{"id":1,"userName":"丁蜂","text":"天气不错","likes":6,"comments":1,"createTime":"2022-12-08 15:00","updateTime":"2022-12-08 15:00"},
+    commentInfos:[
+      {userName:"张三",avatarSrc:"",createTime:"",commentText:""}
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    console.log(111)
+    var _detail=JSON.parse(options.a) 
+   this.setData({detail:_detail})
 
   },
 

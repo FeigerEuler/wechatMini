@@ -10,7 +10,7 @@ Page({
     posts: {
       "subAppId": 123, 
       "postsDetail":[
-        {"id":1,"userName":"丁蜂","text":"天气不错","likes":6,"comments":1,"createTime":"2022-12-08 15:00","updateTime":"2022-12-08 15:00"},
+        {"id":1,"userName":"丁蜂","text":"天气不错","likes":6,"comments":1,"createTime":"2022-12-08 15:00","updateTime":"2022-12-08 15:00" },
         {"id":2,"userName":"Musk","text":"今天下雨","likes":2,"comments":1,"createTime":"2022-12-08 15:00","updateTime":"2022-12-08 15:00"},
         {"id":3,"userName":"罗安庚","text":"今天和好兄弟约游戏, 美滋滋","likes":6,"comments":7,"createTime":"2022-12-08 15:00","updateTime":"2022-12-08 15:00"},
         {"id":4,"userName":"Tony","text":"我是腾讯老总","likes":6,"comments":1,"createTime":"2022-12-09 12:00","updateTime":"2022-12-09 15:00"}

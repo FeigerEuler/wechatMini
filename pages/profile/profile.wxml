@@ -1,11 +1,15 @@
 <!--pages/profile/profile.wxml-->
-<image class="avatar" src='https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83epZnG62cq5Ixk6IvfPIs7zQwk4BFwvvIrhapiaecUxCZ7rkwia1gic3VZUyxcd9hE2FvsGkl4VLmvoYg/132'></image>
+<image class="avatar" src='{{avatarUrl}}'></image>
 <button open-type="getUserInfo" bindtap="getInfos">授权</button>
 <open-data type="userNickName"></open-data>
 <view>
   <view class='tabs_title'>
-      <view class='title_item active' bindtap="allPosts">所有博文</view>
-      <view class='title_item' bindtap="chagerMB">充点马币</view>
+      <view class='title_item {{isChargeMB?"":"active"}}' bindtap="allPosts">所有博文</view>
+      <view class='title_item {{isChargeMB?"active":""}}' bindtap="chargeMB">充点马币</view>
   </view>
 <view class="tabs_content"> content</view>
+<view > {{chargeAmount}} 马币
+  <button  bindtap="increaseMB">+</button>
+  <button  bindtap="genParams">立即充值</button>
+</view>
 </view>

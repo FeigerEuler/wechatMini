@@ -53,8 +53,8 @@ App({
   },
   globalData: {
     userInfo: null,
-      hasLogin: false,
-      openid: null
+    hasLogin: false,
+    openid: null
 
   }
 })

@@ -14,3 +14,7 @@
   color: red;
   border-bottom: 10rpx solid currentColor;
 }
+.avatar{
+  width: 100rpx;
+  height: 100rpx;
+}

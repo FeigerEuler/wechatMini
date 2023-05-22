@@ -5,7 +5,26 @@ Page({
    * 页面的初始数据
    */
   data: {
+      openId:"",
+      avatarUrl:"https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83epZnG62cq5Ixk6IvfPIs7zQwk4BFwvvIrhapiaecUxCZ7rkwia1gic3VZUyxcd9hE2FvsGkl4VLmvoYg/132",
+      isChargeMB:false,
+      chargeAmount:1,
 
+      paramsOrigin: {
+        "subOpenId": null,
+        "mchNo":123,
+        "appOrderNo": (new Date()).getTime(),
+        "userId":"111111111",
+        "clientName":"测试",
+        "orderTitle":"话费充值",
+        "goodDesp":"中国移动全国手机号均可充值，及时到账",
+        "timestamp":(new Date()).getTime(),
+        "totalAmount":"0.01",
+        "paymentDetail":[
+          {"amount":"2000","typeCn":"住宿费"},
+          {"amount":"3000","typeCn":"学费"}
+        ],
+      }
   },
 
   /**
@@ -16,48 +35,77 @@ Page({
     console.log(app.globalData)
   },
  chargeMB(){
+   this.setData({isChargeMB:true})
+ },
+ increaseMB(){
+   this.data.chargeAmount+=1;
+   this.setData({chargeAmount:this.data.chargeAmount})
    
  },
+ genParams(){
+  var _totalAmount =this.data.chargeAmount/100;
+  console.log('amount',_totalAmount)
+  const params = Object.assign(this.data.paramsOrigin, {
+    totalAmount:_totalAmount,
+    "paymentDetail":[
+      {"amount":this.data.chargeAmount,"typeCn":"马币"},
+    ]
+ })
+    console.log('params',params)
+},
+ goCashier(params){
+  
+  wx.request({
+    url: `${DOMAIN}/api/order/test/generateToken/wechatApp?jsonStr=${encodeURIComponent(JSON.stringify(params))}`, 
+    method: 'POST',
+    success (res) {
+      console.log('generateToken/wechat res:',res.data)
+      if(res.data.code === 200){
+        const querydata = getQueryData(res.data.result)
+        const {token, mchNo,bizId} = querydata;}
+      }})
+ },
  allPosts(){
-
+  this.setData({isChargeMB:false})
  },
   getInfos(e){
-    wx.login({
+    var _this = this;
+     wx.getUserProfile({
+      desc:"完善头像",
+       success:(e)=>{
+       var app = getApp()
+       app.globalData.avatarUrl=e.userInfo.avatarUrl
+       _this.setData({avatarUrl:e.userInfo.avatarUrl})
+       console.log(app.globalData)
+      
 
-      success:function(e){
-        console.log("111",e)
-        wx.getUserInfo({
-          success:function(res){
-            wx.request({
-           url: `http://localhost:8088/api/login`,
-           method: 'POST',
-        //   header: {token}, // test token
-           data:{e},
-             success (res1) {
-            console.log('createMobileOrder res:',res1.data);
-            
-              console.log(`not 200...`)
-              const msg = `${res.data.msg || '系统错误'}`;
-              wx.showToast({
-                title: msg,
-                icon: 'none',
-                duration: 2000
-              })
-           
-            },
-          fail(e){
-            console.log(`error:`,e)
-            const msg = `系统异常`;
-            wx.showToast({
-              title: msg,
-              icon: 'none',
-              duration: 2000
-            })
-          },
-            })
-          }
-       } )
-      }});
+       wx.login({
+        success: res => {
+          console.log("res",res)
+          var jsCode=res.code;
+          var avatar = this.data.avatarUrl
+          wx.request({
+            url: `http://localhost:8088/api/login`,
+            method: 'POST',
+            data:{'code':jsCode,'avatarUrl':avatar},
+            success (res1) {console.log(`ok:`,res1)},
+            fail(res1){
+                  console.log(`error:`,res1)
+                  const msg = `系统异常`;
+                  wx.showToast({
+                    title: msg,
+                    icon: 'none',
+                    duration: 2000
+                  })
+                },   
+             } ) 
+          // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        }
+      })
+      },
+       fail(e){console.log("111",e)}
+    });
+    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

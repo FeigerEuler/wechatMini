@@ -18,3 +18,16 @@
   width: 100rpx;
   height: 100rpx;
 }
+view .charge{ 
+  display: flex;
+  font-size: 30px;
+  margin: 35px; 
+  margin-left: 120rpx;
+
+}
+.charge-bt{
+  color: #000;
+  background-color: #090;
+  margin-left: 120rpx;
+  margin-right: 120rpx;
+}

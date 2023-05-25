@@ -11,8 +11,7 @@ Page({
       chargeAmount:1,
 
       paramsOrigin: {
-        "subOpenId": null,
-        "mchNo":123,
+        "mchNo":'8565262001',
         "appOrderNo": (new Date()).getTime(),
         "userId":"111111111",
         "clientName":"测试",
@@ -40,23 +39,26 @@ Page({
  increaseMB(){
    this.data.chargeAmount+=1;
    this.setData({chargeAmount:this.data.chargeAmount})
-   
+   wx.showToast({
+    title: '请理性消费',
+    icon: 'none',
+    duration: 500
+  })
  },
  genParams(){
   var _totalAmount =this.data.chargeAmount/100;
-  console.log('amount',_totalAmount)
   const params = Object.assign(this.data.paramsOrigin, {
     totalAmount:_totalAmount,
     "paymentDetail":[
       {"amount":this.data.chargeAmount,"typeCn":"马币"},
     ]
  })
-    console.log('params',params)
+  this.goCashier(params);
 },
  goCashier(params){
   
   wx.request({
-    url: `${DOMAIN}/api/order/test/generateToken/wechatApp?jsonStr=${encodeURIComponent(JSON.stringify(params))}`, 
+    url: `https://mhf4188.tech:18443/api/order/test/generateToken/wechatApp?jsonStr=${encodeURIComponent(JSON.stringify(params))}`, 
     method: 'POST',
     success (res) {
       console.log('generateToken/wechat res:',res.data)
@@ -64,6 +66,18 @@ Page({
         const querydata = getQueryData(res.data.result)
         const {token, mchNo,bizId} = querydata;}
       }})
+      wx.navigateToMiniProgram({
+        appId: 'wx8b50ba8121d86b53',
+        path: 'pages/ecobillcashier/ecobillcashier?token=123&mchNo=8565262001&domainName=https://mhf4188.tech:18443&biziId=ecoBill-wechat',
+        extraData: {
+          foo: 'bar'
+        },
+        envVersion: 'release',
+        success(res) {
+          // 打开成功
+        }
+      })
+      
  },
  allPosts(){
   this.setData({isChargeMB:false})

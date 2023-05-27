@@ -7,7 +7,7 @@ Page({
   data: {
       openId:"",
       avatarUrl:"https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83epZnG62cq5Ixk6IvfPIs7zQwk4BFwvvIrhapiaecUxCZ7rkwia1gic3VZUyxcd9hE2FvsGkl4VLmvoYg/132",
-      isChargeMB:false,
+      isChargeMB:true,
       chargeAmount:1,
 
       paramsOrigin: {
@@ -81,6 +81,12 @@ Page({
  },
  allPosts(){
   this.setData({isChargeMB:false})
+  var posts=[
+    {"id":1,"userName":"丁蜂","text":"天气不错","likes":6,"comments":1,"createTime":"2022-12-08 15:00","updateTime":"2022-12-08 15:00" },
+    {"id":2,"userName":"Musk","text":"今天下雨","likes":2,"comments":1,"createTime":"2022-12-08 15:00","updateTime":"2022-12-08 15:00"}
+  ]
+  this.setData({posts})
+
  },
   getInfos(e){
     var _this = this;

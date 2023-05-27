@@ -19,7 +19,7 @@ Page({
     }
   },
 
-
+/*
   clickLikeBt(e){
     var cData=this.data.posts;
     cData.postsDetail[e.target.id].likes+=1;//先修改json值
@@ -32,7 +32,7 @@ Page({
     wx.navigateTo({ //在接收页面的url后面加上“？自定义名称=字符串”就可以通过url传值
       url: '/pages/postDetails/postDetails?a='+JSON.stringify(a)//此处注意中文符号与引文符号的？
     })
-  },
+  },*/
   /**
    * 生命周期函数--监听页面加载
    */

@@ -1,0 +1,73 @@
+/* components/posts.wxss */
+.posts{
+  padding-bottom: 10px;
+}
+.title{
+  align-self: start;
+}
+
+
+.header{
+  padding-bottom: 9px;
+  width: 100%;
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.header image{
+ width: 40px;
+ height: 40px;
+ border-radius: 12px;
+  
+}
+.header view{
+  padding-left: 10px;
+   
+ }
+.createTime{
+ font-size: 10px;
+ margin-bottom: 3px;
+ text-align: center;
+}
+.userName{
+
+  font-size: 20px;
+  color: red;
+  text-align:left;
+  
+ }
+ .content{
+   padding-top: 8px;
+   padding-left: 15px;
+
+ }
+ .footer{
+   display: flex;
+   margin-bottom: 15;
+ }
+.footer>button{
+  border: 0px;
+  height: 30px;
+}
+
+.footer.likebtn1{
+  border: 3px;
+}
+ .tapimg1{
+   padding-left: 0px;
+   height: 23px;
+   width: 25px;
+ }
+ .comment{
+  padding-left: 0px;
+ 
+  
+}
+ .marg{
+   padding-bottom: 25px;
+ }
+ .br{
+   border: 5px solid lavender ;
+   margin-top: 10px;
+   
+ }

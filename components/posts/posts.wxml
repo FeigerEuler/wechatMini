@@ -1,0 +1,29 @@
+<!--components/posts.wxml-->
+<view class = 'marg'/>
+<view>
+     <view class="posts" wx:for="{{posts.postsDetail}}" wx:key='id' wx:for-item = 'v'  >
+       <view class="header">
+       <image class ="avatar" src="/static/imags/{{v.id}}.jpg"/>
+          <view>
+            <view class="userName">
+               {{v.userName}}
+            </view>
+            <text class='createTime'>{{v.createTime}}</text>
+          </view>
+     
+       </view>
+        <span class="content">{{v.text}}</span>
+        <view class = 'marg'/>
+        <view class='footer'>     
+        <button class="likebtn1" plain="true" bindtap="clickLikeBt" id="{{index}}">    
+            <image class="tapimg1" src='/static/imags/like.png'></image><text>  {{v.likes}} </text>        
+        </button> 
+        <button class="comment" plain="true" bindtap="clickCommentBt" id="{{index}}">      
+            <image class="tapimg1" src='/static/imags/comment.png'></image><text> {{v.comments}} </text>
+        </button> 
+        </view>
+        
+        <view class = 'br'> 
+        </view>
+    </view>     
+</view>

@@ -7,7 +7,7 @@
       <view class='title_item {{isChargeMB?"":"active"}}' bindtap="allPosts">所有博文</view>
       <view class='title_item {{isChargeMB?"active":""}}' bindtap="chargeMB">充点马币</view>
   </view>
-<view class="tabs_content" wx:if="{{!isChargeMB}}"> </view>
+<view class="tabs_content" wx:if="{{!isChargeMB}}"> <posts-page postsDetails="{{posts}}"/> </view>
 <view wx:if="{{isChargeMB}}">
   <view class="charge" > {{chargeAmount}} 马币  = ¥ {{chargeAmount/100}}
   <button class="increase-bt" bindtap="increaseMB">+</button>

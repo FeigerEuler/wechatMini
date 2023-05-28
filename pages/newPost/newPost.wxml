@@ -1,0 +1,8 @@
+<!--pages/newPost/newPost.wxml-->
+<view>
+<view class="input-view">
+  <button class='send-bt' bindtap="sendPost">分享</button>
+</view>
+<textarea class="input" placeholder=" 分享生活" bindblur="onInput"></textarea>
+
+</view>

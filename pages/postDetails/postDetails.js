@@ -7,7 +7,7 @@ Page({
   data: {
    // detail:{"id":1,"userName":"丁蜂","text":"天气不错","likes":6,"comments":1,"createTime":"2022-12-08 15:00","updateTime":"2022-12-08 15:00"},
     commentInfos:[
-      {userName:"张三",avatarSrc:"",createTime:"",commentText:""}
+      {userName:"张三",avatarSrc:"",createTime:"",content:""}
     ]
   },
 

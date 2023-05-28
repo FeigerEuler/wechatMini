@@ -1,6 +1,6 @@
 {
   "pages": [
-    
+    "pages/newPost/newPost",
     "pages/huibo/huibo",
      "pages/postDetails/postDetails",
     "pages/cashiermock/cashiermock",
@@ -24,7 +24,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/cashiermock/cashiermock",
+        "pagePath": "pages/newPost/newPost",
         "iconPath": "static/imags/search.png",
         "selectedIconPath": "static/imags/search.png",
         "text": "搜索"

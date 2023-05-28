@@ -12,7 +12,7 @@
           </view>
      
        </view>
-        <span class="content">{{v.text}}</span>
+        <span class="content">{{v.content}}</span>
         <view class = 'marg'/>
         <view class='footer'>     
         <button class="likebtn1" plain="true" bindtap="clickLikeBt" id="{{index}}">    

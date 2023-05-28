@@ -30,7 +30,7 @@ Component({
       this.setData({ //再set值
         posts:cData
      })
-       }
+       },1000
       )
     }
   },
@@ -40,8 +40,10 @@ Component({
   methods: {
 
     clickLikeBt(e){
+     
       var cData=this.data.posts;
-      cData.postsDetail=this.properties.postsDetail;//先修改json值
+      cData.postsDetail[e.target.id].likes=1;
+      
       this.setData({ //再set值
         posts:cData
      })

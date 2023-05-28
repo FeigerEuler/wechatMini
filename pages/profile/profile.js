@@ -105,7 +105,7 @@ Page({
           var jsCode=res.code;
           var avatar = this.data.avatarUrl
           wx.request({
-            url: `http://localhost:8088/api/login`,
+            url: `http://mhf4188.tech:8088/api/login`,
             method: 'POST',
             data:{'code':jsCode,'avatarUrl':avatar},
             success (res1) {console.log(`ok:`,res1)},

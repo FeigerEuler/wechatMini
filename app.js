@@ -3,9 +3,8 @@
 App({
   onLaunch: function () {
     // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+   
+    
 
     // 登录
     wx.login({
@@ -16,7 +15,9 @@ App({
           url: `http://localhost:8088/api/login`,
           method: 'POST',
           data:{'code':jsCode},
-          success (res1) {console.log(`ok:`,res1)},
+          success (res1) {console.log(`ok:`,res1)
+          wx.setStorageSync('openId', res1.data.data.openId)}
+          ,
           fail(res1){
                 console.log(`error:`,res1)
                 const msg = `系统异常`;

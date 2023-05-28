@@ -10,7 +10,7 @@
           </view>
      
        </view>
-        <span class="content">{{detail.text}}</span>
+        <span class="content">{{detail.content}}</span>
         <view class = 'marg'/>
         <view class='footer'>     
         <button class="likebtn1" plain="true" bindtap="clickLikeBt" id="{{index}}">    
@@ -21,6 +21,8 @@
         </button> 
         </view>
         
-        <view class = 'br'> 
+        <view class = 'br'/> 
 
+<view class="input-view">
+  <textarea class="input" placeholder="发表友善评论..." bindblur="onInput"></textarea>
 </view>

@@ -1,0 +1,18 @@
+/* pages/newPost/newPost.wxss */
+.input{
+  margin: 30rpx;
+
+}
+
+.send-bt{
+  
+  margin: 10rpx;
+  width: 90rpx;
+  height: 50rpx;
+  font-size: 25rpx;
+  color: rgb(230, 59, 74);
+  padding: 0rpx;
+  align-content: flex-end;
+  margin-right: 40rpx;
+  margin-left: 630rpx;
+}

@@ -1,2 +1,2 @@
 <!--pages/huibo/huibo.wxml-->
-<huibo-posts loading="true" postsDetails="{{posts.postsDetail}}"></huibo-posts>
+<huibo-posts loading="true" postsDetails="{{posts}}"></huibo-posts>

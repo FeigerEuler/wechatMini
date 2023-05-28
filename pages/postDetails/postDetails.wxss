@@ -68,9 +68,24 @@
    padding-bottom: 25px;
  }
  .br{
-   border: 5px solid lavender ;
+   border: 5rpx solid lavender ;
    margin-top: 10px;
    
+ }
+
+ .input-view{
+   
+   border-radius: 50rpx;
+   margin: 3rpx;
+   border: solid ;
+  
+ }
+ .input{
+   border-radius: 5rpx;
+   border-radius: 50rpx;
+   height: 40rpx;
+   align-items: center;
+   padding-left: 50rpx;
  }
  /* .avatar{
     
